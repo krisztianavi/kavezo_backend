@@ -12,3 +12,11 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Concert {
+  id          Int      @id @default(autoincrement())
+  artist      String
+  stime       DateTime
+  duration    Int      
+  isCancelled Boolean  @default(false)
+}
