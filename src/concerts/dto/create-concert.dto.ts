@@ -1,4 +1,4 @@
-import { IsBoolean, IsDate, IsInt, IsNotEmpty, IsString, MinDate, Min, Validate } from "class-validator";
+import { IsBoolean, IsDate, IsInt, IsNotEmpty, IsString, MinDate, Min, Validate, IsOptional } from "class-validator";
 import { Transform } from "class-transformer";
 
 class ValidMinuteConstraint {
@@ -29,5 +29,6 @@ export class CreateConcertDto {
     duration: number;
 
     @IsBoolean()
+    @IsOptional()
     isCancelled?: boolean = false;
 }
