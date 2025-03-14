@@ -15,7 +15,7 @@ async function main() {
     for (let i = 0; i < 50; i++) {
       await prisma.concert.create({
         data: {
-          artist: faker.person.fullName(),
+          artist: faker.music.artist(),
           stime: generateValidTime(),
           duration: faker.number.int({ min: 60, max: 300 }),
           isCancelled: Math.random() < 0.1,
